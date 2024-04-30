@@ -20,8 +20,6 @@ const RegisterEmpolyee= async (req, res) => {
 
     const newUser = await User.create(username, profile, email, gender, password, employee);
 
-   // const accessToken = jwt.sign({ id: newUser.id, email: newUser.email }, process.env.JWT_SECRET);
-    
     const allUserData = [];
     const usersSnapshot = await db.collection('users').get();
     usersSnapshot.forEach(doc => {
